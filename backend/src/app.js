@@ -22,7 +22,15 @@ const connectDB = require("./config/db.js");
 connectDB();
 
 //Middleware
-app.use(cors())
+app.use(
+  cors({
+    origin: [
+      "https://tazkyah-frontend.vercel.app",
+      "http://localhost:3000",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json())
 
 // Serve static files from the uploads directory
