@@ -1,7 +1,10 @@
 // src/services/authService.js
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL;
+// Use environment variable with fallback
+const API_URL =
+  process.env.REACT_APP_API_URL || "http://188.245.242.164:5005/api";
+
 
 // Get stored token
 export const getToken = () => {
